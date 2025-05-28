@@ -1,10 +1,12 @@
+variables: # pipeline-level 
+   branch: 'azure_branch'
 steps:
  - script: |
     mkdir sync
     cd sync
     git clone https://github.com/itismyera/TEngine.git
-    cd <github project>
-    git remote add azure https://<Azure DevOps Organization>:<token>@dev.azure.com/<Azure DevOps Organization>/<project>/_git/<repo.git>   
+    cd TEngine
+    git remote add azure https://CombatCommand:AojshM2FVl4OUrViBYpynGmaz4Pma44TVjPll2hCWZHl2ORiDfKVJQQJ99BEACAAAAAAAAAAAAASAZDO1rfq@dev.azure.com/CombatCommand/TEngine/_git/TEngine   
     git branch -D $(branch)
     git checkout -b $(branch)
         

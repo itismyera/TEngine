@@ -1,0 +1,13 @@
+steps:
+ - script: |
+    mkdir sync
+    cd sync
+    git clone https://github.com/itismyera/TEngine.git
+    cd <github project>
+    git remote add azure https://<Azure DevOps Organization>:<token>@dev.azure.com/<Azure DevOps Organization>/<project>/_git/<repo.git>   
+    git branch -D $(branch)
+    git checkout -b $(branch)
+        
+    git push -d azure $(branch)
+    git push -u azure $(branch) --force
+   displayName: 'Command Line Script'
